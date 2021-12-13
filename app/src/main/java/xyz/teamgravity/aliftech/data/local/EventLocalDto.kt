@@ -10,10 +10,10 @@ data class EventLocalDto(
     @PrimaryKey(autoGenerate = true)
     val id: Long = 0,
 
-    val name: String,
+    val name: String = "",
     val icon: String = "",
-    val url: String,
-    val endDate: String
+    val url: String = "",
+    val endDate: String = "e"
 )
 
 fun EventLocalDto.toEventModel(): EventModel = EventModel(
