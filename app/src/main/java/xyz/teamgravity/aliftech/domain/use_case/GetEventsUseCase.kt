@@ -15,7 +15,7 @@ class GetEventsUseCase(
     operator fun invoke(): Flow<Resource<List<EventModel>>> = flow {
         try {
             emit(Resource.Loading())
-            val response = repository.getEvents()
+            val response = repository.getEventsRemote()
             if (response.response.isNullOrEmpty()) throw EventEmptyException("Events are empty in the response")
             val events = response.response.map { it.toEventModel() }
             emit(Resource.Success(data = events))
