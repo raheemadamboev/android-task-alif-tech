@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">android-task-alif-tech</string>
+
+    <string name="retry">Retry</string>
 </resources>
