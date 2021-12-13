@@ -1,4 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
+
     <style name="Theme.Androidtaskaliftech" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimary">@color/blue</item>
         <item name="colorPrimaryVariant">@color/blue_700</item>
@@ -17,5 +18,30 @@
         <item name="button_text_color">@color/white</item>
         <item name="primary_ripple_color">@color/black_ripple</item>
         <item name="background_progress_color">@color/blue_ripple</item>
+    </style>
+
+    <!-- simple material card view -->
+    <style name="SimpleMaterialCard">
+        <item name="cardCornerRadius">10dp</item>
+        <item name="rippleColor">?attr/primary_ripple_color</item>
+        <item name="cardBackgroundColor">?attr/card_color</item>
+        <item name="cardElevation">2dp</item>
+    </style>
+
+    <!-- simple indeterminate progress bar -->
+    <style name="SimpleIndeterminateProgressBar">
+        <item name="cpb_background_progressbar_color">?attr/background_progress_color</item>
+        <item name="cpb_background_progressbar_width">1dp</item>
+        <item name="cpb_indeterminate_mode">true</item>
+        <item name="cpb_progress_direction">to_right</item>
+        <item name="cpb_progressbar_color">?attr/colorPrimary</item>
+        <item name="cpb_progressbar_width">2dp</item>
+        <item name="cpb_round_border">true</item>
+    </style>
+
+    <!-- simple material button -->
+    <style name="SimpleMaterialButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textColor">?attr/button_text_color</item>
     </style>
 </resources>
