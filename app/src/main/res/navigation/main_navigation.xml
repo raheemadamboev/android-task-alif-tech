@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/eventListFragment">
+
+
+    <fragment
+        android:id="@+id/eventListFragment"
+        android:name="xyz.teamgravity.aliftech.presentation.event_list.EventListFragment"
+        android:label="fragment_event_list"
+        tools:layout="@layout/fragment_event_list" >
+        <action
+            android:id="@+id/action_eventListFragment_to_eventWebFragment"
+            app:destination="@id/eventWebFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventWebFragment"
+        android:name="xyz.teamgravity.aliftech.presentation.event_web.EventWebFragment"
+        android:label="fragment_event_web"
+        tools:layout="@layout/fragment_event_web" />
+</navigation>
