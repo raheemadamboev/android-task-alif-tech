@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="xyz.teamgravity.aliftech">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".injection.App"
         android:allowBackup="true"
@@ -13,7 +15,7 @@
         android:theme="@style/Theme.Androidtaskaliftech"
         tools:ignore="AllowBackup">
         <activity
-            android:name=".MainActivity"
+            android:name=".presentation.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
