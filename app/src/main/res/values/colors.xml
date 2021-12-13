@@ -6,6 +6,8 @@
     <color name="blue">#00acee</color>
     <color name="blue_200">#66deff</color>
     <color name="blue_700">#007dbb</color>
+    <color name="red">#E74C3C</color>
 
     <color name="blue_ripple">#3000acee</color>
+    <color name="black_ripple">#30000000</color>
 </resources>
