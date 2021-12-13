@@ -18,6 +18,7 @@ data class EventLocalDto(
 )
 
 fun EventLocalDto.toEventModel(): EventModel = EventModel(
+    id = id,
     name = name,
     iconUrl = icon,
     contentUrl = url,
