@@ -2,14 +2,14 @@ package xyz.teamgravity.aliftech.presentation.event_list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.paging.PagingDataAdapter
+import androidx.recyclerview.widget.ListAdapter
 import xyz.teamgravity.aliftech.databinding.CardEventBinding
 import xyz.teamgravity.aliftech.domain.model.EventModel
 
-class EventListAdapter(diff: EventListDiff) : PagingDataAdapter<EventModel, EventListViewHolder>(diff) {
+class EventListAdapter(diff: EventListDiff) : ListAdapter<EventModel, EventListViewHolder>(diff) {
 
     override fun onBindViewHolder(holder: EventListViewHolder, position: Int) {
-        getItem(position)?.let { holder.bind(it) }
+        holder.bind(getItem(position))
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventListViewHolder {
