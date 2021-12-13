@@ -8,6 +8,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import xyz.teamgravity.aliftech.data.local.EventDao
 import xyz.teamgravity.aliftech.data.local.EventDatabase
 import xyz.teamgravity.aliftech.data.local.EventDatabaseConst
 import xyz.teamgravity.aliftech.data.remote.api.EventApi
@@ -40,4 +41,8 @@ object ApplicationModule {
         Room.databaseBuilder(app, EventDatabase::class.java, EventDatabaseConst.NAME)
             .fallbackToDestructiveMigration()
             .build()
+
+    @Provides
+    @Singleton
+    fun provideEventDao(database: EventDatabase): EventDao = database.eventDao()
 }
