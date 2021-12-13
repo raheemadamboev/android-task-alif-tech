@@ -13,7 +13,7 @@ data class EventLocalDto(
     val name: String = "",
     val icon: String = "",
     val url: String = "",
-    val endDate: String = "e"
+    val endDate: String = ""
 )
 
 fun EventLocalDto.toEventModel(): EventModel = EventModel(
