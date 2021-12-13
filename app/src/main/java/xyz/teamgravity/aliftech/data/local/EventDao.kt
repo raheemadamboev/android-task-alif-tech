@@ -9,7 +9,10 @@ import androidx.room.Query
 interface EventDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAll(events: List<EventLocalDto>)
+    suspend fun insertAll(events: List<EventLocalDto>)
+
+    @Query("DELETE FROM ${EventDatabaseConst.TABLE_EVENT}")
+    suspend fun deleteAll()
 
     @Query("SELECT * FROM ${EventDatabaseConst.TABLE_EVENT} ORDER BY id ASC")
     suspend fun getEvents(): List<EventLocalDto>

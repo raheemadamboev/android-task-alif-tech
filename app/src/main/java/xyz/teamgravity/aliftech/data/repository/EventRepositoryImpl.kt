@@ -11,6 +11,14 @@ class EventRepositoryImpl(
     private val dao: EventDao
 ) : EventRepository {
 
+    override suspend fun insertEventsLocal(events: List<EventLocalDto>) {
+        dao.insertAll(events)
+    }
+
+    override suspend fun deleteAllEventsLocal() {
+        dao.deleteAll()
+    }
+
     override suspend fun getEventsRemote(): EventResponseDto {
         return api.getEvents()
     }

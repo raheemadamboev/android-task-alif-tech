@@ -30,7 +30,7 @@ object ApplicationModule {
         .create(EventApi::class.java)
 
     @Provides
-    fun provideEventRepository(api: EventApi): EventRepository = EventRepositoryImpl(api)
+    fun provideEventRepository(api: EventApi, dao: EventDao): EventRepository = EventRepositoryImpl(api, dao)
 
     @Provides
     fun provideGetEventsUseCase(repository: EventRepository) = GetEventsUseCase(repository)
