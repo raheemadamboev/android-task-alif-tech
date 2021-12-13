@@ -3,7 +3,7 @@ package xyz.teamgravity.aliftech.domain.use_case
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import xyz.teamgravity.aliftech.core.Resource
-import xyz.teamgravity.aliftech.data.local.toEventModel
+import xyz.teamgravity.aliftech.data.local.dto.toEventModel
 import xyz.teamgravity.aliftech.data.remote.dto.toEventLocalDto
 import xyz.teamgravity.aliftech.domain.exception.EventEmptyException
 import xyz.teamgravity.aliftech.domain.model.EventModel
