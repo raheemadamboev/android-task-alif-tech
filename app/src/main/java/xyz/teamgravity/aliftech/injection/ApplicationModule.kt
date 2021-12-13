@@ -15,6 +15,8 @@ import xyz.teamgravity.aliftech.data.remote.api.EventApi
 import xyz.teamgravity.aliftech.data.repository.EventRepositoryImpl
 import xyz.teamgravity.aliftech.domain.repository.EventRepository
 import xyz.teamgravity.aliftech.domain.use_case.GetEventsUseCase
+import xyz.teamgravity.aliftech.presentation.event_list.EventListAdapter
+import xyz.teamgravity.aliftech.presentation.event_list.EventListDiff
 import javax.inject.Singleton
 
 @Module
@@ -45,4 +47,11 @@ object ApplicationModule {
     @Provides
     @Singleton
     fun provideEventDao(database: EventDatabase): EventDao = database.eventDao()
+
+    @Provides
+    @Singleton
+    fun provideEventListDiff(): EventListDiff = EventListDiff()
+
+    @Provides
+    fun provideEventListAdapter(diff: EventListDiff): EventListAdapter = EventListAdapter(diff)
 }
