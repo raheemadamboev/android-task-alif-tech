@@ -3,10 +3,10 @@ package xyz.teamgravity.aliftech.data.local.database
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import xyz.teamgravity.aliftech.data.local.dao.EventDao
-import xyz.teamgravity.aliftech.domain.model.EventModel
+import xyz.teamgravity.aliftech.data.local.dto.EventLocalDto
 
 @Database(
-    entities = [EventModel::class],
+    entities = [EventLocalDto::class],
     version = EventDatabaseConst.VERSION,
     exportSchema = false
 )

@@ -1,10 +1,9 @@
 package xyz.teamgravity.aliftech.data.repository
 
-import androidx.paging.PagingSource
 import xyz.teamgravity.aliftech.data.local.dao.EventDao
+import xyz.teamgravity.aliftech.data.local.dto.EventLocalDto
 import xyz.teamgravity.aliftech.data.remote.api.EventApi
 import xyz.teamgravity.aliftech.data.remote.dto.EventResponseDto
-import xyz.teamgravity.aliftech.domain.model.EventModel
 import xyz.teamgravity.aliftech.domain.repository.EventRepository
 
 class EventRepositoryImpl(
@@ -12,7 +11,7 @@ class EventRepositoryImpl(
     private val dao: EventDao
 ) : EventRepository {
 
-    override suspend fun insertAllEventsLocal(events: List<EventModel>) {
+    override suspend fun insertAllEventsLocal(events: List<EventLocalDto>) {
         dao.insertAll(events)
     }
 
@@ -24,7 +23,7 @@ class EventRepositoryImpl(
         return api.getEvents()
     }
 
-    override suspend fun getEventsLocal(): PagingSource<Int, EventModel> {
+    override suspend fun getEventsLocal(): List<EventLocalDto> {
         return dao.getEvents()
     }
 }

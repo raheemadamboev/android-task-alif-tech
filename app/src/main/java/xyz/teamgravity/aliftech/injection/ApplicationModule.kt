@@ -1,7 +1,6 @@
 package xyz.teamgravity.aliftech.injection
 
 import android.app.Application
-import androidx.paging.PagingConfig
 import androidx.room.Room
 import dagger.Module
 import dagger.Provides
@@ -55,12 +54,4 @@ object ApplicationModule {
 
     @Provides
     fun provideEventListAdapter(diff: EventListDiff): EventListAdapter = EventListAdapter(diff)
-
-    @Provides
-    @Singleton
-    fun providePagingConfig(): PagingConfig = PagingConfig(
-        pageSize = 3,
-        enablePlaceholders = true,
-        maxSize = 21
-    )
 }
