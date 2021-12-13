@@ -2,7 +2,7 @@ package xyz.teamgravity.aliftech.data.remote.dto
 
 
 import com.google.gson.annotations.SerializedName
-import xyz.teamgravity.aliftech.data.local.dto.EventLocalDto
+import xyz.teamgravity.aliftech.domain.model.EventModel
 
 data class EventDto(
     @SerializedName("endDate") val endDate: String,
@@ -15,9 +15,9 @@ data class EventDto(
     @SerializedName("venue") val venue: VenueDto
 )
 
-fun EventDto.toEventLocalDto(): EventLocalDto = EventLocalDto(
+fun EventDto.toEventModel(): EventModel = EventModel(
     name = name,
-    icon = icon,
-    url = url,
+    iconUrl = icon,
+    contentUrl = url,
     endDate = endDate
 )
