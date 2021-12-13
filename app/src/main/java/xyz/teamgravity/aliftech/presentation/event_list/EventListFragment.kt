@@ -18,7 +18,7 @@ import xyz.teamgravity.aliftech.presentation.extension.visible
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class EventListFragment : Fragment() {
+class EventListFragment : Fragment(), EventListListener {
 
     private var _binding: FragmentEventListBinding? = null
     private val binding get() = _binding!!
@@ -42,6 +42,7 @@ class EventListFragment : Fragment() {
     }
 
     private fun recyclerview() {
+        adapter.listener = this
         binding.recyclerview.adapter = adapter
     }
 
@@ -85,6 +86,11 @@ class EventListFragment : Fragment() {
         binding.retryB.setOnClickListener {
             viewmodel.getEvents()
         }
+    }
+
+    override fun onEventClick(url: String) {
+        // TODO navigate to EventWebFragment
+        // findNavController().navigateSafely(EventListFragmentDirections.actionEventListFragmentToEventWebFragment(url = url))
     }
 
     override fun onDestroyView() {
