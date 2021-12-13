@@ -1,11 +1,15 @@
 package xyz.teamgravity.aliftech.injection
 
+import android.app.Application
+import androidx.room.Room
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import xyz.teamgravity.aliftech.data.local.EventDatabase
+import xyz.teamgravity.aliftech.data.local.EventDatabaseConst
 import xyz.teamgravity.aliftech.data.remote.api.EventApi
 import xyz.teamgravity.aliftech.data.repository.EventRepositoryImpl
 import xyz.teamgravity.aliftech.domain.repository.EventRepository
@@ -29,4 +33,11 @@ object ApplicationModule {
 
     @Provides
     fun provideGetEventsUseCase(repository: EventRepository) = GetEventsUseCase(repository)
+
+    @Provides
+    @Singleton
+    fun provideEventDatabase(app: Application): EventDatabase =
+        Room.databaseBuilder(app, EventDatabase::class.java, EventDatabaseConst.NAME)
+            .fallbackToDestructiveMigration()
+            .build()
 }

@@ -4,7 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import xyz.teamgravity.aliftech.domain.model.EventModel
 
-@Entity(tableName = EventDatabaseConst.EVENT_TABLE)
+@Entity(tableName = EventDatabaseConst.TABLE_EVENT)
 data class EventLocalDto(
 
     @PrimaryKey(autoGenerate = true)
