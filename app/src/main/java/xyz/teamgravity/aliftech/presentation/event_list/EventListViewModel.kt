@@ -23,7 +23,7 @@ class EventListViewModel @Inject constructor(
         getEvents()
     }
 
-    private fun getEvents() {
+    fun getEvents() {
         getEventsUseCase().onEach { result ->
             when (result) {
                 is Resource.Success -> {

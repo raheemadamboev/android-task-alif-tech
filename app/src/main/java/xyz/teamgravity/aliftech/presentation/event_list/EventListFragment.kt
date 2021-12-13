@@ -37,11 +37,16 @@ class EventListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         recyclerview()
+        button()
         observe()
     }
 
     private fun recyclerview() {
         binding.recyclerview.adapter = adapter
+    }
+
+    private fun button() {
+        onRetry()
     }
 
     private fun observe() {
@@ -73,6 +78,12 @@ class EventListFragment : Fragment() {
                     }
                 }
             }
+        }
+    }
+
+    private fun onRetry() {
+        binding.retryB.setOnClickListener {
+            viewmodel.getEvents()
         }
     }
 
