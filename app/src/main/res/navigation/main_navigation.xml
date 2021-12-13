@@ -17,5 +17,9 @@
         android:id="@+id/eventWebFragment"
         android:name="xyz.teamgravity.aliftech.presentation.event_web.EventWebFragment"
         android:label="fragment_event_web"
-        tools:layout="@layout/fragment_event_web" />
+        tools:layout="@layout/fragment_event_web" >
+        <argument
+            android:name="url"
+            app:argType="string" />
+    </fragment>
 </navigation>
