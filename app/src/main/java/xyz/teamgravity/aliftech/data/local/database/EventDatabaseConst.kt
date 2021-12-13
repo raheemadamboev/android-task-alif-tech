@@ -1,4 +1,4 @@
-package xyz.teamgravity.aliftech.data.local
+package xyz.teamgravity.aliftech.data.local.database
 
 object EventDatabaseConst {
 

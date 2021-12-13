@@ -1,7 +1,8 @@
-package xyz.teamgravity.aliftech.data.local
+package xyz.teamgravity.aliftech.data.local.dto
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import xyz.teamgravity.aliftech.data.local.database.EventDatabaseConst
 import xyz.teamgravity.aliftech.domain.model.EventModel
 
 @Entity(tableName = EventDatabaseConst.TABLE_EVENT)

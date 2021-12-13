@@ -1,9 +1,11 @@
-package xyz.teamgravity.aliftech.data.local
+package xyz.teamgravity.aliftech.data.local.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import xyz.teamgravity.aliftech.data.local.database.EventDatabaseConst
+import xyz.teamgravity.aliftech.data.local.dto.EventLocalDto
 
 @Dao
 interface EventDao {

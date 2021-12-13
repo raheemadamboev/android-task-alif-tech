@@ -1,7 +1,7 @@
 package xyz.teamgravity.aliftech.data.repository
 
-import xyz.teamgravity.aliftech.data.local.EventDao
-import xyz.teamgravity.aliftech.data.local.EventLocalDto
+import xyz.teamgravity.aliftech.data.local.dao.EventDao
+import xyz.teamgravity.aliftech.data.local.dto.EventLocalDto
 import xyz.teamgravity.aliftech.data.remote.api.EventApi
 import xyz.teamgravity.aliftech.data.remote.dto.EventResponseDto
 import xyz.teamgravity.aliftech.domain.repository.EventRepository

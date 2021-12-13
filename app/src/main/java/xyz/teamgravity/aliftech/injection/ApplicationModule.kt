@@ -8,9 +8,9 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import xyz.teamgravity.aliftech.data.local.EventDao
-import xyz.teamgravity.aliftech.data.local.EventDatabase
-import xyz.teamgravity.aliftech.data.local.EventDatabaseConst
+import xyz.teamgravity.aliftech.data.local.dao.EventDao
+import xyz.teamgravity.aliftech.data.local.database.EventDatabase
+import xyz.teamgravity.aliftech.data.local.database.EventDatabaseConst
 import xyz.teamgravity.aliftech.data.remote.api.EventApi
 import xyz.teamgravity.aliftech.data.repository.EventRepositoryImpl
 import xyz.teamgravity.aliftech.domain.repository.EventRepository
