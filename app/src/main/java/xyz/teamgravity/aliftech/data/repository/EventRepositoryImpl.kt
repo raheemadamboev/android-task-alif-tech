@@ -11,7 +11,7 @@ class EventRepositoryImpl(
     private val dao: EventDao
 ) : EventRepository {
 
-    override suspend fun insertEventsLocal(events: List<EventLocalDto>) {
+    override suspend fun insertAllEventsLocal(events: List<EventLocalDto>) {
         dao.insertAll(events)
     }
 

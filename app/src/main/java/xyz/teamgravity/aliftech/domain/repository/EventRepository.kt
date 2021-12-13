@@ -5,7 +5,7 @@ import xyz.teamgravity.aliftech.data.remote.dto.EventResponseDto
 
 interface EventRepository {
 
-    suspend fun insertEventsLocal(events: List<EventLocalDto>)
+    suspend fun insertAllEventsLocal(events: List<EventLocalDto>)
 
     suspend fun deleteAllEventsLocal()
 

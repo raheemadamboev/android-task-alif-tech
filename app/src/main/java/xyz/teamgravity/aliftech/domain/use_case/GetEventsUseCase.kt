@@ -20,7 +20,7 @@ class GetEventsUseCase(private val repository: EventRepository) {
             val localEvents = response.response.map { it.toEventLocalDto() }
 
             repository.deleteAllEventsLocal()
-            repository.insertEventsLocal(events = localEvents)
+            repository.insertAllEventsLocal(events = localEvents)
 
             val events = repository.getEventsLocal().map { it.toEventModel() }
             emit(Resource.Success(data = events))

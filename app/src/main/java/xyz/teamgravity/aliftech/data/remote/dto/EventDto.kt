@@ -2,7 +2,7 @@ package xyz.teamgravity.aliftech.data.remote.dto
 
 
 import com.google.gson.annotations.SerializedName
-import xyz.teamgravity.aliftech.data.local.EventLocalDto
+import xyz.teamgravity.aliftech.data.local.dto.EventLocalDto
 
 data class EventDto(
     @SerializedName("endDate") val endDate: String,
