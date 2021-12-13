@@ -6,5 +6,5 @@ data class EventModel(
     val name: String = "",
     val iconUrl: String = "",
     val contentUrl: String = "",
-    val endDate: Date? = null
+    val endDate: String = ""
 )
