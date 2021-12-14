@@ -7,13 +7,30 @@
     android:background="?attr/layout_background"
     tools:context=".presentation.event_list.EventListFragment">
 
+    <TextView
+        android:id="@+id/event_count_t"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="@string/your_event_count"
+        android:textColor="?attr/primary_text_color"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
         android:orientation="vertical"
         android:scrollbars="vertical"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/event_count_t" />
 
     <com.mikhaellopez.circularprogressbar.CircularProgressBar
         android:id="@+id/progress_bar"

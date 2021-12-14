@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import xyz.teamgravity.aliftech.R
 import xyz.teamgravity.aliftech.databinding.FragmentEventListBinding
 import xyz.teamgravity.aliftech.presentation.extension.invisible
 import xyz.teamgravity.aliftech.presentation.extension.navigateSafely
@@ -63,12 +64,14 @@ class EventListFragment : Fragment(), EventListListener {
                     viewmodel.state.collectLatest { state ->
                         when {
                             state.loading -> {
+                                eventCountT.text = getString(R.string.your_event_count, "0")
                                 progressBar.visible()
                                 retryB.invisible()
                                 errorT.invisible()
                             }
 
                             state.error.isNotBlank() -> {
+                                eventCountT.text = getString(R.string.your_event_count, "0")
                                 progressBar.invisible()
                                 retryB.visible()
                                 errorT.text = state.error
@@ -76,6 +79,7 @@ class EventListFragment : Fragment(), EventListListener {
                             }
 
                             state.events.isNotEmpty() -> {
+                                eventCountT.text = getString(R.string.your_event_count, state.events.size.toString())
                                 progressBar.invisible()
                                 retryB.invisible()
                                 errorT.invisible()
