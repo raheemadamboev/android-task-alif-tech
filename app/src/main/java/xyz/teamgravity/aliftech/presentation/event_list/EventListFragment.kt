@@ -103,7 +103,7 @@ class EventListFragment : Fragment(), EventListListener {
             super.onScrolled(recyclerView, dx, dy)
             if (!viewmodel.finished && !viewmodel.loading) {
                 if (!recyclerView.canScrollVertically(1) && dy != 0) {
-                    viewmodel.nextPage()
+                    viewmodel.onNextPage()
                 }
             }
         }

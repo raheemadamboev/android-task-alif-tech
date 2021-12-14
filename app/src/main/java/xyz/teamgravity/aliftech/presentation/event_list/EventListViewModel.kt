@@ -70,7 +70,7 @@ class EventListViewModel @Inject constructor(
         }.launchIn(viewModelScope)
     }
 
-    fun nextPage() {
+    fun onNextPage() {
         viewModelScope.launch {
             events?.let { events ->
 
