@@ -18,9 +18,11 @@ class EventListAdapter(diff: EventListDiff) : ListAdapter<EventModel, EventListA
     ) : RecyclerView.ViewHolder(binding.root) {
 
         init {
-            val position = bindingAdapterPosition
-            if (position != RecyclerView.NO_POSITION) {
-                listener?.onEventClick(getItem(position).contentUrl)
+            binding.root.setOnClickListener {
+                val position = bindingAdapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    listener?.onEventClick(getItem(position).contentUrl)
+                }
             }
         }
 

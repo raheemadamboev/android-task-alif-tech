@@ -9,11 +9,14 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.RecyclerView
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import xyz.teamgravity.aliftech.databinding.FragmentEventListBinding
 import xyz.teamgravity.aliftech.presentation.extension.invisible
+import xyz.teamgravity.aliftech.presentation.extension.navigateSafely
 import xyz.teamgravity.aliftech.presentation.extension.visible
 import javax.inject.Inject
 
@@ -43,7 +46,10 @@ class EventListFragment : Fragment(), EventListListener {
 
     private fun recyclerview() {
         adapter.listener = this
-        binding.recyclerview.adapter = adapter
+        binding.apply {
+            recyclerview.addOnScrollListener(listener)
+            recyclerview.adapter = adapter
+        }
     }
 
     private fun button() {
@@ -89,12 +95,23 @@ class EventListFragment : Fragment(), EventListListener {
     }
 
     override fun onEventClick(url: String) {
-        // TODO navigate to EventWebFragment
-        // findNavController().navigateSafely(EventListFragmentDirections.actionEventListFragmentToEventWebFragment(url = url))
+        findNavController().navigateSafely(EventListFragmentDirections.actionEventListFragmentToEventWebFragment(url = url))
+    }
+
+    private val listener = object : RecyclerView.OnScrollListener() {
+        override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+            super.onScrolled(recyclerView, dx, dy)
+            if (!viewmodel.finished && !viewmodel.loading) {
+                if (!recyclerView.canScrollVertically(1) && dy != 0) {
+                    viewmodel.nextPage()
+                }
+            }
+        }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
+        binding.recyclerview.removeOnScrollListener(listener)
         _binding = null
     }
 }
